@@ -22,11 +22,14 @@ console.log(admin);//виведе
 
 let countiesData = [];
 
+
+
+//asyns-функція асинхронна. await- зупиняє виконанняя функції поки promise виконується.
 async function fetchCounties() {
     const response = await fetch("https://api.census.gov/data/2020/acs/acs5/profile?get=NAME&for=county:*");
-    const data = await response.json();
+    const data = await response.json(); //відповідь перетворює у масив.
 
-    countiesData = data.slice(1).map(item => ({
+    countiesData = data.slice(1).map(item => ({//прибирає перший рядок map перетворює в обєкт
         name: item[0],
         state: item[1],
         county: item[2]
@@ -34,17 +37,17 @@ async function fetchCounties() {
 }
 
 function findCountyCode(countyName) {
-    // виправлено: порівняння без урахування регістру
-    const found = countiesData.find(c => c.name.toLowerCase() === countyName.toLowerCase());
+    const found = countiesData.find(c => c.name.toLowerCase() === countyName.toLowerCase()); //find повертає перший елем мас який задовільняє умову.
+    //.toLowerCase() — щоб пошук не залежав від регістру
     return found ? `${found.state}${found.county}` : "Не знайдено";
 }
 
 const searchBtn = document.getElementById("searchBtn");
-searchBtn.disabled = true;
+searchBtn.disabled = true;//блокує поки грузить
 searchBtn.textContent = "Завантаження...";
 
 fetchCounties().then(() => {
-    searchBtn.disabled = false;
+    searchBtn.disabled = false;//розблоковує після
     searchBtn.textContent = "Знайти";
 });
 
@@ -56,7 +59,7 @@ searchBtn.addEventListener("click", () => {
 
 //task4
 
-document.getElementById("form").addEventListener("submit", function(event) {
+document.getElementById("form").addEventListener("submit", function(event) { //addEventListener слухач події. Браузер сам викликає цю функцію коли форма відправляється.
     const first = document.getElementById("first_name").value.trim();
     const last = document.getElementById("last_name").value.trim();
     const email = document.getElementById("email").value.trim();

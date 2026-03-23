@@ -1,0 +1,26 @@
+{
+  "name": "weblabs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./lab5/input.css -o ./lab5/output.css",
+    "watch": "tailwindcss -i ./lab5/input.css -o ./lab5/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HunterDead14/RepWEB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/HunterDead14/RepWEB/issues"
+  },
+  "homepage": "https://github.com/HunterDead14/RepWEB#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
