@@ -6,6 +6,7 @@ useSeoMeta({
   title: 'Список продуктів',
   description: 'Products and pricing plans'
 })
+const subscriptionStore = useSubscriptionStore()
 
 const billing = ref<BillingType>('annual')
 
@@ -16,8 +17,9 @@ const plans = computed(() => {
   return (plansData.value || []).filter(p => p.billing === billing.value)
 })
 
-function openSubscription(planId: number) {
-  navigateTo(`/subscription?planId=${planId}`)
+function openSubscription(plan: Plan) {
+  subscriptionStore.setPlan(plan)
+  navigateTo('/subscription')
 }
 
 const globalFilter = ref('')
@@ -172,8 +174,7 @@ const starColor = ['#9BE564', '#9BE564', '#9BE564']
 
             <button
               class="mt-4 w-full py-2.5 rounded-md bg-orange-400 hover:bg-orange-500 text-black font-semibold text-sm transition"
-              @click="openSubscription(plan.id)"
-            >
+              @click="openSubscription(plan)"            >
               Try It Free
             </button>
 
