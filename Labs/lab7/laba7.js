@@ -11,25 +11,22 @@ console.log(x);//5
 // if ("0") {
 //     alert('Привіт');
 // }
-//Так, буде, тому що "0" — це непорожній рядок, а значить true.
+//Так
 
 //task2.3
 let name="Василь";
 let admin=name;
-console.log(admin);//виведе
+console.log(admin);
 
 //task 3.
 
 let countiesData = [];
 
-
-
-//asyns-функція асинхронна. await- зупиняє виконанняя функції поки promise виконується.
 async function fetchCounties() {
     const response = await fetch("https://api.census.gov/data/2020/acs/acs5/profile?get=NAME&for=county:*");
-    const data = await response.json(); //відповідь перетворює у масив.
+    const data = await response.json();
 
-    countiesData = data.slice(1).map(item => ({//прибирає перший рядок map перетворює в обєкт
+    countiesData = data.slice(1).map(item => ({
         name: item[0],
         state: item[1],
         county: item[2]
@@ -37,17 +34,16 @@ async function fetchCounties() {
 }
 
 function findCountyCode(countyName) {
-    const found = countiesData.find(c => c.name.toLowerCase() === countyName.toLowerCase()); //find повертає перший елем мас який задовільняє умову.
-    //.toLowerCase() — щоб пошук не залежав від регістру
+    const found = countiesData.find(c => c.name.toLowerCase() === countyName.toLowerCase());
     return found ? `${found.state}${found.county}` : "Не знайдено";
 }
 
 const searchBtn = document.getElementById("searchBtn");
-searchBtn.disabled = true;//блокує поки грузить
+searchBtn.disabled = true;
 searchBtn.textContent = "Завантаження...";
 
 fetchCounties().then(() => {
-    searchBtn.disabled = false;//розблоковує після
+    searchBtn.disabled = false;
     searchBtn.textContent = "Знайти";
 });
 
@@ -59,7 +55,7 @@ searchBtn.addEventListener("click", () => {
 
 //task4
 
-document.getElementById("form").addEventListener("submit", function(event) { //addEventListener слухач події. Браузер сам викликає цю функцію коли форма відправляється.
+document.getElementById("form").addEventListener("submit", function(event) {
     const first = document.getElementById("first_name").value.trim();
     const last = document.getElementById("last_name").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -76,7 +72,6 @@ document.getElementById("form").addEventListener("submit", function(event) { //a
 let position = 0;
 const el = document.getElementById("elid");
 
-// обмеження щоб елемент не виходив за межі вікна
 const MAX_OFFSET = window.innerWidth - 150;
 const MIN_OFFSET = 0;
 

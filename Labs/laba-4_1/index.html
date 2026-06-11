@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Starter Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@700&display=swap"
+          rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        mono: ['DM Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-$END$
+<body class="bg-gray-100 min-h-screen flex items-center justify-center font-sans">
+
+<div class="relative bg-white rounded-2xl p-8 w-[350px] border-2 border-transparent hover:border-gray-500 shadow-md transition-all duration-300 overflow-hidden">
+
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-green-300 rounded-t-2xl"></div>
+
+    <span class="inline-block bg-gray-100 text-gray-500 text-xs font-medium px-2.5 py-1 rounded-md mb-4">7-days free then:</span>
+
+    <div class="flex items-baseline">
+        <span class="font-mono text-5xl font-bold text-gray-900 leading-none">$83.25</span>
+        <span class="text-sm text-gray-400 ml-1">/month</span>
+    </div>
+
+    <p class="text-xs text-gray-400 mt-1.5">Billed yearly at <strong
+            class="text-gray-900 font-semibold">$999.00</strong></p>
+
+    <div class="relative mt-5 mb-5 group/btn">
+        <!-- Tooltip -->
+        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-[220px] bg-gray-900 text-white text-xs font-medium leading-snug rounded-xl px-3.5 py-2.5 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+            You cannot downgrade your plan until within 30 days of your next billing date.
+            <span class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></span>
+        </div>
+        <button class="w-full py-3 bg-gray-100 group-hover/btn:bg-transparent group-hover/btn:border group-hover/btn:border-gray-900 text-gray-500 group-hover/btn:text-gray-900 text-sm font-semibold rounded-xl cursor-pointer transition-all duration-200">
+            Downgrade to Starter
+        </button>
+    </div>
+
+    <hr class="border-gray-100 mb-5"/>
+
+    <ul class="flex flex-col gap-3.5">
+        <li class="flex items-start gap-2.5">
+        <span class="mt-0.5 shrink-0">
+<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 1C8 4.866 11.134 8 15 8C11.134 8 8 11.134 8 15C8 11.134 4.866 8 1 8C4.866 8 8 4.866 8 1Z" fill="#22c55e"/>
+</svg>
+        </span>
+            <span class="text-sm text-gray-900 leading-snug">
+          <strong>Primary user + 0 free team members</strong><br/>
+          <span class="text-gray-400 text-xs">(extra team members for $35/month)</span>
+        </span>
+        </li>
+
+        <li class="flex items-start gap-2.5">
+        <span class="mt-0.5 shrink-0">
+         <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 1C8 4.866 11.134 8 15 8C11.134 8 8 11.134 8 15C8 11.134 4.866 8 1 8C4.866 8 8 4.866 8 1Z" fill="#22c55e"/>
+</svg>
+        </span>
+            <strong class="text-sm text-gray-900 leading-snug">Save unlimited properties</strong>
+        </li>
+
+        <li class="flex items-start gap-2.5">
+        <span class="mt-0.5 shrink-0">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 1C8 4.866 11.134 8 15 8C11.134 8 8 11.134 8 15C8 11.134 4.866 8 1 8C4.866 8 8 4.866 8 1Z" fill="#22c55e"/>
+</svg>
+        </span>
+            <span class="text-sm text-gray-900 leading-snug">
+          <strong>10 000 exports</strong><br/>
+          <span class="text-gray-400 text-xs">(additional exports at $0.02 each)</span>
+        </span>
+        </li>
+
+        <li class="flex items-start gap-2.5">
+        <span class="mt-0.5 shrink-0">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 1C8 4.866 11.134 8 15 8C11.134 8 8 11.134 8 15C8 11.134 4.866 8 1 8C4.866 8 8 4.866 8 1Z" fill="#22c55e"/>
+</svg>
+        </span>
+            <span class="text-sm text-gray-900 leading-snug">
+          <strong>500 free skip traces</strong><br/>
+          <span class="text-gray-400 text-xs">(additional skip tracing at $0.08 each)</span>
+        </span>
+        </li>
+
+        <li class="flex items-start gap-2.5">
+        <span class="mt-0.5 shrink-0">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 1C8 4.866 11.134 8 15 8C11.134 8 8 11.134 8 15C8 11.134 4.866 8 1 8C4.866 8 8 4.866 8 1Z" fill="#22c55e"/></svg>
+        </span>
+            <strong class="text-sm text-gray-900 leading-snug">Imports $0.01</strong>
+        </li>
+    </ul>
+
+</div>
+
 </body>
 </html>
