@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Plan, BillingType } from '~/app/types/plan'
-import type { Product } from '~/app/types/product'
+import type { Plan, BillingType } from '~/types/plan'
+import type { Product } from '~/types/products'
 
 useSeoMeta({
   title: 'Список продуктів',
@@ -132,6 +132,7 @@ const starColor = ['#9BE564', '#9BE564', '#9BE564']
             </div>
           </div>
         </div>
+
 
         <div class="flex flex-wrap gap-4">
           <div
