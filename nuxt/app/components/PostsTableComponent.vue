@@ -60,10 +60,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-// Створюємо змінну posts, яку шукає шаблон
 const posts = ref([]);
 
-// Функція для отримання даних з бекенду
 const getPosts = () => {
   $fetch('http://127.0.0.1:8000/api/admin/blog/posts')
     .then(response => {
@@ -71,6 +69,5 @@ const getPosts = () => {
     });
 };
 
-// Запускаємо функцію при завантаженні компонента
 getPosts();
 </script>
